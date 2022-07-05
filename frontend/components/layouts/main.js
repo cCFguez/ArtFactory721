@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Navbar from '../navbar.js'
 import { Box, Container } from '@chakra-ui/react'
 
 // main page which renders the children
@@ -9,6 +10,8 @@ const Main = ({ children, router }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>ArtFactory721 - Homepage</title>
       </Head>
+
+      <Navbar />
 
       <Container maxW="container.md" pb={14}>
         {children}

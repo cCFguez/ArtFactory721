@@ -1,9 +1,5 @@
 const Page = props => {
-  return (
-    <div>
-      <div>Hello World!</div>
-    </div>
-  )
+  return <div></div>
 }
 
 export default Page
