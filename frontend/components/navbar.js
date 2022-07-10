@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react'
 import Logo from './logo'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import ThemeToggleButton from './theme-toggle-button'
 
 const LinkItem = ({ href, path, children }) => {
   const active = path == href
@@ -70,15 +71,17 @@ const Navbar = props => {
           <LinkItem href="/" path={path}>
             Home
           </LinkItem>
-          <LinkItem href="/" path={path}>
+          <LinkItem href="/collections" path={path}>
             Collections
           </LinkItem>
-          <LinkItem href="/" path={path}>
+          <LinkItem href="/artists" path={path}>
             Artists
           </LinkItem>
         </Stack>
 
         <Box flex={1} align="right">
+          <ThemeToggleButton />
+
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton
@@ -87,6 +90,17 @@ const Navbar = props => {
                 variant="outline"
                 aria-label="Options"
               />
+              <MenuList>
+                <NextLink href="/" passHref>
+                  <MenuItem as={Link}>Home</MenuItem>
+                </NextLink>
+                <NextLink href="/collections" passHref>
+                  <MenuItem as={Link}>Collections</MenuItem>
+                </NextLink>
+                <NextLink href="/artists" passHref>
+                  <MenuItem as={Link}>Artists</MenuItem>
+                </NextLink>
+              </MenuList>
             </Menu>
           </Box>
         </Box>

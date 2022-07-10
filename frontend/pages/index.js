@@ -1,5 +1,5 @@
 const Page = props => {
-  return <div></div>
+  return <div>Placeholder</div>
 }
 
 export default Page
