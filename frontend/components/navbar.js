@@ -35,7 +35,6 @@ const LinkItem = ({ href, path, children }) => {
 
 const Navbar = props => {
   const { path } = props
-  console.log(props)
 
   return (
     <Box
