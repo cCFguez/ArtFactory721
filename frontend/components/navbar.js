@@ -11,10 +11,11 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Button
 } from '@chakra-ui/react'
 import Logo from './logo'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 
 const LinkItem = ({ href, path, children }) => {
@@ -55,7 +56,7 @@ const Navbar = props => {
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+          <Heading as="h1" size="lg" letterSpacing={'normal'}>
             <Logo />
           </Heading>
         </Flex>
@@ -67,9 +68,19 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <LinkItem href="/" path={path}>
+          <Menu>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+              Digital Art
+            </MenuButton>
+            <MenuList>
+              <MenuItem>Upcoming Collections</MenuItem>
+              <MenuItem>All Collections</MenuItem>
+              <MenuItem>Artists</MenuItem>
+            </MenuList>
+          </Menu>
+          {/* <LinkItem href="/" path={path}>
             Home
-          </LinkItem>
+          </LinkItem> */}
           <LinkItem href="/collections" path={path}>
             Collections
           </LinkItem>
