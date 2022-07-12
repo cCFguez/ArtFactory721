@@ -1,9 +1,15 @@
 import Head from 'next/head'
 import Navbar from '../navbar.js'
-import { Box, Container } from '@chakra-ui/react'
+import {
+  background,
+  Box,
+  Container,
+  useColorMode,
+  useColorModeValue
+} from '@chakra-ui/react'
 
 // main page which renders the children
-const Main = ({ children, router }) => {
+const Layout = ({ children, router }) => {
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -11,7 +17,7 @@ const Main = ({ children, router }) => {
         <title>ArtFactory721 - Homepage</title>
       </Head>
 
-      <Navbar />
+      <Navbar path={router.asPath} />
 
       <Container maxW="container.md" pb={14}>
         {children}
@@ -20,4 +26,4 @@ const Main = ({ children, router }) => {
   )
 }
 
-export default Main
+export default Layout

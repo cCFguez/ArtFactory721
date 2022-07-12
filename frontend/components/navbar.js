@@ -36,13 +36,14 @@ const LinkItem = ({ href, path, children }) => {
 
 const Navbar = props => {
   const { path } = props
+  console.log(props)
 
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('#cdcdef', '#25252380')}
       style={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
       {...props}
@@ -69,7 +70,11 @@ const Navbar = props => {
           mt={{ base: 4, nmd: 0 }}
         >
           <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+            <MenuButton
+              background={useColorModeValue('#dddeff', '#2a2a2a')}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+            >
               Digital Art
             </MenuButton>
             <MenuList>
@@ -78,15 +83,41 @@ const Navbar = props => {
               <MenuItem>Artists</MenuItem>
             </MenuList>
           </Menu>
+          <Menu>
+            <MenuButton
+              background={useColorModeValue('#dddeff', '#2a2a2a')}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+            >
+              Locked
+            </MenuButton>
+            <MenuList>
+              <MenuItem>Photography</MenuItem>
+              <MenuItem>Music</MenuItem>
+            </MenuList>
+          </Menu>
+          <Menu>
+            <MenuButton
+              background={useColorModeValue('#dddeff', '#2a2a2a')}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+            >
+              Community
+            </MenuButton>
+            <MenuList>
+              <MenuItem>About us</MenuItem>
+              <MenuItem>How it works</MenuItem>
+            </MenuList>
+          </Menu>
           {/* <LinkItem href="/" path={path}>
             Home
           </LinkItem> */}
-          <LinkItem href="/collections" path={path}>
+          {/* <LinkItem href="/collections" path={path}>
             Collections
           </LinkItem>
           <LinkItem href="/artists" path={path}>
             Artists
-          </LinkItem>
+          </LinkItem> */}
         </Stack>
 
         <Box flex={1} align="right">
