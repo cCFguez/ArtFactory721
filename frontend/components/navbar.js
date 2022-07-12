@@ -53,7 +53,7 @@ const Navbar = props => {
         p={2}
         maxW="container.md"
         wrap="wrap"
-        align="center"
+        alignItems="center"
         justify="space-between"
       >
         <Flex align="center" mr={5}>
@@ -66,6 +66,7 @@ const Navbar = props => {
           display={{ base: 'none', md: 'flex' }}
           width={{ base: 'full', md: 'auto' }}
           alignItems="center"
+          verticalAlign="center"
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >

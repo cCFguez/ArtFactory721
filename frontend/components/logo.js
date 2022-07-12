@@ -4,18 +4,18 @@ import { Text, useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
-  font-weight: bold;
-  font-size: 18px;
-  display: inline-flex;
-  align-items: center;
-  height: 30px;
-  line-height: 20px;
-  padding: 10px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 15;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 15px;
   img {
     transition: 200ms ease;
   }
-  &:hover img {
-    transform: rotate(20deg);
+  img:hover {
+    transform: scale(1.75);
   }
 `
 
@@ -26,15 +26,7 @@ const Logo = () => {
     <Link href="/" scroll={false}>
       <a>
         <LogoBox>
-          <Image src={footPrintImg} width={20} height={20} alt="logo" />
-          <Text
-            color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-            fontFamily='M PLUS Rounded 1c", sans-serif'
-            fontWeight="bold"
-            ml={3}
-          >
-            ArtFactory721
-          </Text>
+          <img src={footPrintImg} width={40}></img>
         </LogoBox>
       </a>
     </Link>
