@@ -34,6 +34,14 @@ const LinkItem = ({ href, path, children }) => {
   )
 }
 
+const CustomMenuItem = ({ href, linkName }) => {
+  return (
+    <NextLink href={href} passHref>
+      <MenuItem as={Link}>{linkName}</MenuItem>
+    </NextLink>
+  )
+}
+
 const Navbar = props => {
   const { path } = props
   console.log(props)
@@ -79,9 +87,15 @@ const Navbar = props => {
               Digital Art
             </MenuButton>
             <MenuList>
-              <MenuItem>Upcoming Collections</MenuItem>
-              <MenuItem>All Collections</MenuItem>
-              <MenuItem>Artists</MenuItem>
+              <CustomMenuItem
+                href="/upcomingCollections"
+                linkName="Upcoming Collections"
+              />
+              <CustomMenuItem
+                href="/allCollections"
+                linkName="All Collections"
+              />
+              <CustomMenuItem href="/artists" linkName="Artists" />
             </MenuList>
           </Menu>
           <Menu>
@@ -93,8 +107,8 @@ const Navbar = props => {
               Locked
             </MenuButton>
             <MenuList>
-              <MenuItem>Photography</MenuItem>
-              <MenuItem>Music</MenuItem>
+              <CustomMenuItem href="/photography" linkName="Photography" />
+              <CustomMenuItem href="/music" linkName="Music" />
             </MenuList>
           </Menu>
           <Menu>
@@ -106,19 +120,10 @@ const Navbar = props => {
               Community
             </MenuButton>
             <MenuList>
-              <MenuItem>About us</MenuItem>
-              <MenuItem>How it works</MenuItem>
+              <CustomMenuItem href="about" linkName="About us" />
+              <CustomMenuItem href="howitworks" linkName="How it works" />
             </MenuList>
           </Menu>
-          {/* <LinkItem href="/" path={path}>
-            Home
-          </LinkItem> */}
-          {/* <LinkItem href="/collections" path={path}>
-            Collections
-          </LinkItem>
-          <LinkItem href="/artists" path={path}>
-            Artists
-          </LinkItem> */}
         </Stack>
 
         <Box flex={1} align="right">
@@ -133,15 +138,19 @@ const Navbar = props => {
                 aria-label="Options"
               />
               <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>Home</MenuItem>
-                </NextLink>
-                <NextLink href="/collections" passHref>
-                  <MenuItem as={Link}>Collections</MenuItem>
-                </NextLink>
-                <NextLink href="/artists" passHref>
-                  <MenuItem as={Link}>Artists</MenuItem>
-                </NextLink>
+                <CustomMenuItem href="/artists" linkName="Artists" />
+                <CustomMenuItem
+                  href="/upcomingCollections"
+                  linkName="Upcoming Collections"
+                />
+                <CustomMenuItem
+                  href="/allCollections"
+                  linkName="All Collections"
+                />
+                <CustomMenuItem href="/photography" linkName="Photography" />
+                <CustomMenuItem href="howitworks" linkName="How it works" />
+                <CustomMenuItem href="/music" linkName="Music" />
+                <CustomMenuItem href="about" linkName="About us" />
               </MenuList>
             </Menu>
           </Box>
