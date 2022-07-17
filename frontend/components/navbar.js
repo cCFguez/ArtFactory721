@@ -44,7 +44,6 @@ const CustomMenuItem = ({ href, linkName }) => {
 
 const Navbar = props => {
   const { path } = props
-  console.log(props)
 
   return (
     <Box
