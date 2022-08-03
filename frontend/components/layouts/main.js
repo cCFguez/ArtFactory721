@@ -10,6 +10,7 @@ import {
 
 // main page which renders the children
 const Layout = ({ children, router }) => {
+  console.log(children)
   return (
     <Box as="main" pb={8}>
       <Head>
