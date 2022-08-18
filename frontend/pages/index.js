@@ -4,7 +4,7 @@ import Collection from '../components/collection/collection.js'
 const Page = props => {
   return (
     <div>
-      <Collection></Collection>
+      //<Collection></Collection>
     </div>
   )
 }

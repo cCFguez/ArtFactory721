@@ -34,10 +34,12 @@ const LinkItem = ({ href, path, children }) => {
   )
 }
 
-const CustomMenuItem = ({ href, linkName }) => {
+const CustomMenuItem = ({ href, linkName, disabled }) => {
   return (
     <NextLink href={href} passHref>
-      <MenuItem as={Link}>{linkName}</MenuItem>
+      <MenuItem disabled={disabled} as={Link}>
+        {linkName}
+      </MenuItem>
     </NextLink>
   )
 }
@@ -87,14 +89,20 @@ const Navbar = props => {
             </MenuButton>
             <MenuList>
               <CustomMenuItem
+                disabled={true}
                 href="/upcomingCollections"
                 linkName="Upcoming Collections"
               />
               <CustomMenuItem
+                disabled={true}
                 href="/allCollections"
                 linkName="All Collections"
               />
-              <CustomMenuItem href="/artists" linkName="Artists" />
+              <CustomMenuItem
+                disabled={true}
+                href="/artists"
+                linkName="Artists"
+              />
             </MenuList>
           </Menu>
           <Menu>
@@ -106,8 +114,12 @@ const Navbar = props => {
               Locked
             </MenuButton>
             <MenuList>
-              <CustomMenuItem href="/photography" linkName="Photography" />
-              <CustomMenuItem href="/music" linkName="Music" />
+              <CustomMenuItem
+                disabled={true}
+                href="/photography"
+                linkName="Photography"
+              />
+              <CustomMenuItem disabled={true} href="/music" linkName="Music" />
             </MenuList>
           </Menu>
           <Menu>
@@ -119,8 +131,16 @@ const Navbar = props => {
               Community
             </MenuButton>
             <MenuList>
-              <CustomMenuItem href="about" linkName="About us" />
-              <CustomMenuItem href="howitworks" linkName="How it works" />
+              <CustomMenuItem
+                disabled={true}
+                href="about"
+                linkName="About us"
+              />
+              <CustomMenuItem
+                disabled={true}
+                href="howitworks"
+                linkName="How it works"
+              />
             </MenuList>
           </Menu>
         </Stack>
@@ -137,19 +157,41 @@ const Navbar = props => {
                 aria-label="Options"
               />
               <MenuList>
-                <CustomMenuItem href="/artists" linkName="Artists" />
                 <CustomMenuItem
+                  disabled={true}
+                  href="/artists"
+                  linkName="Artists"
+                />
+                <CustomMenuItem
+                  disabled={true}
                   href="/upcomingCollections"
                   linkName="Upcoming Collections"
                 />
                 <CustomMenuItem
+                  disabled={true}
                   href="/allCollections"
                   linkName="All Collections"
                 />
-                <CustomMenuItem href="/photography" linkName="Photography" />
-                <CustomMenuItem href="howitworks" linkName="How it works" />
-                <CustomMenuItem href="/music" linkName="Music" />
-                <CustomMenuItem href="about" linkName="About us" />
+                <CustomMenuItem
+                  disabled={true}
+                  href="/photography"
+                  linkName="Photography"
+                />
+                <CustomMenuItem
+                  disabled={true}
+                  href="howitworks"
+                  linkName="How it works"
+                />
+                <CustomMenuItem
+                  disabled={true}
+                  href="/music"
+                  linkName="Music"
+                />
+                <CustomMenuItem
+                  disabled={true}
+                  href="about"
+                  linkName="About us"
+                />
               </MenuList>
             </Menu>
           </Box>
