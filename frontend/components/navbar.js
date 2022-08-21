@@ -1,3 +1,4 @@
+import disabledLink from '../lib/styles.js'
 import NextLink from 'next/link'
 import {
   Container,
@@ -37,7 +38,11 @@ const LinkItem = ({ href, path, children }) => {
 const CustomMenuItem = ({ href, linkName, disabled }) => {
   return (
     <NextLink href={href} passHref>
-      <MenuItem disabled={disabled} as={Link}>
+      <MenuItem
+        disabled={disabled}
+        as={Link}
+        style={{ pointerEvents: disabled ? 'None' : 'all' }}
+      >
         {linkName}
       </MenuItem>
     </NextLink>
