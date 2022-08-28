@@ -40,6 +40,7 @@ const CustomMenuItem = ({ href, linkName, disabled }) => {
       <MenuItem
         disabled={disabled}
         as={Link}
+        _focus={'none'}
         style={{ pointerEvents: disabled ? 'None' : 'all' }}
       >
         {linkName}
