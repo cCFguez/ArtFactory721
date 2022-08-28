@@ -11,11 +11,19 @@ import {
 
 const CollectionItem = props => {
   const imagePlaceholder = 'static/imagePlaceholder.jpg'
+  const exampleNftObject = {
+    priceInEth: 1,
+    maxAmount: 50,
+    availableAmount: 20,
+    type: 'Dutch Auction',
+    license: 'Example License',
+    startDate: 'starting 11. July 2022 20:00 MEZ'
+  }
 
   return (
     <Container>
       <VStack>
-        <HStack>
+        <HStack mb={5}>
           <Avatar size={'2xl'} marginX={'-25'}></Avatar>
           <Box
             bg={useColorModeValue('white', 'black')}
@@ -28,10 +36,20 @@ const CollectionItem = props => {
             </Text>
           </Box>
         </HStack>
-        <HStack>
-          <Box boxSize="sm">
+        <HStack width={1200} justify="center">
+          <Box mr={4} boxSize="sm" height="100%">
             <Image src={imagePlaceholder} alt="Image Placeholder Image" />
           </Box>
+          <VStack alignSelf="center" alignItems="start">
+            <Text>{exampleNftObject.priceInEth} ETH</Text>
+            <Text>
+              {exampleNftObject.availableAmount} / {exampleNftObject.maxAmount}{' '}
+              pieces
+            </Text>
+            <Text>{exampleNftObject.type}</Text>
+            <Text>license: {exampleNftObject.license}</Text>
+            <Text>Starting: {exampleNftObject.startDate}</Text>
+          </VStack>
         </HStack>
       </VStack>
     </Container>
